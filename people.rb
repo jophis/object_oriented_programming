@@ -4,28 +4,27 @@ class Person
 	end
 
 	def greeting
-		puts "Hi, my names is #{name}"
+		puts "Hi, my names is #{@name}"
 	end
 end
 
-class Student
-	include Person
-	
+class Student < Person
 	def learn
 		puts "I get it!"
 	end
 end
 
 
-class Instructor
-	include Person
-
+class Instructor < Person
 	def teach
 		puts "Everything in Ruby is an Object"
 	end 
 
 end
 
-p1 = Instructor.new("Chris")
-puts p1.greeting 
+chris = Instructor.new("Chris")
+puts chris.greeting
+
+christina = Student.new("Cristina")
+puts christina.greeting
 
